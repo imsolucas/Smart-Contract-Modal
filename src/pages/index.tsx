@@ -15,14 +15,14 @@ export default function Home() {
   // Read the single value
   const result = useReadContract({
     abi: abi as Abi,
-    address: "0xdd121B564e5c0D1D43Ae3a8BF60e516217aC1561",
+    address: "0x2A7A5893D35d02A5ED235659ccb573AaC65594E2", //smart contract address not wallet address
     functionName: "retrieve",
   });
 
   // Read the current person
   const listOfPeople = useReadContract({
     abi: abi as Abi,
-    address: "0xdd121B564e5c0D1D43Ae3a8BF60e516217aC1561",
+    address: "0x2A7A5893D35d02A5ED235659ccb573AaC65594E2",
     functionName: "listOfPeople",
     args: [peopleIndex],
   });
@@ -46,7 +46,7 @@ export default function Home() {
     if (personName && favoriteNumber) {
       writeContract({
         abi,
-        address: "0xdd121B564e5c0D1D43Ae3a8BF60e516217aC1561",
+        address: "0x2A7A5893D35d02A5ED235659ccb573AaC65594E2",
         functionName: "addPerson",
         args: [personName, parseInt(favoriteNumber)],
       });
@@ -79,7 +79,7 @@ export default function Home() {
         onClick={() =>
           writeContract({
             abi,
-            address: "0xdd121B564e5c0D1D43Ae3a8BF60e516217aC1561",
+            address: "0x2A7A5893D35d02A5ED235659ccb573AaC65594E2",
             functionName: "store",
             args: ["25"],
           })
